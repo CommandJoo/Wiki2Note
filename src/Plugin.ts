@@ -21,7 +21,7 @@ class WikiPlugin extends Plugin {
 			id: 'open-import-modal',
 			name: 'Open the Importer',
 			callback: () => {
-				new SampleModal(this.app, this.settings.countryPrefix).open();
+				new SampleModal(this.app, this.settings).open();
 			}
 		});
 	}

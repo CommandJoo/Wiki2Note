@@ -4,10 +4,14 @@ import {LANGUAGE_CODES, toPair} from "./LanguageCodes";
 
 interface WikiPluginSettings {
 	countryPrefix: string;
+	tableBackground: string;
+	tableBorder: string;
 }
 
 const DEFAULT_SETTINGS: WikiPluginSettings = {
-	countryPrefix: 'en'
+	countryPrefix: 'en',
+	tableBackground: '#323232',
+	tableBorder: '#434343',
 }
 
 class WikiSettingsTab extends PluginSettingTab {
@@ -38,14 +42,29 @@ class WikiSettingsTab extends PluginSettingTab {
 					this.plugin.settings.countryPrefix = value;
 					await this.plugin.saveSettings();
 				});
-			})
-			// .addText(text => text
-			// 	.setPlaceholder('Enter your prefix')
-			// 	.setValue(this.plugin.settings.countryPrefix)
-			// 	.onChange(async (value) => {
-			// 		this.plugin.settings.countryPrefix = value;
-			// 		await this.plugin.saveSettings();
-			// 	}));
+			});
+		new Setting(containerEl)
+			.setName('Table Background')
+			.setDesc("The Background color of Tables or Images")
+			.addColorPicker((color) => {
+
+				color.setValue(this.plugin.settings.tableBackground);
+				color.onChange(async (value) => {
+					this.plugin.settings.tableBackground = value;
+					await this.plugin.saveSettings();
+				});
+			});
+		new Setting(containerEl)
+			.setName('Table Border')
+			.setDesc("The Border color of Tables or Images")
+			.addColorPicker((color) => {
+
+				color.setValue(this.plugin.settings.tableBorder);
+				color.onChange(async (value) => {
+					this.plugin.settings.tableBorder = value;
+					await this.plugin.saveSettings();
+				});
+			});
 	}
 }
 
