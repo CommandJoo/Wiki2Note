@@ -120,7 +120,7 @@ async function fetchWikipediaMarkdown(title: string, settings: WikiPluginSetting
 			src = `https:${src}`;
 		}
 		if (src) {
-			$img.attr("src", src); // Store the correct src in `data-src`
+			$img.attr("src", src);
 		}
 	});
 
@@ -152,7 +152,7 @@ async function fetchWikipediaMarkdown(title: string, settings: WikiPluginSetting
 		filter: ['h1', 'h2'],
 		replacement: function (content, node) {
 			const level = node.nodeName.toLowerCase() === 'h1' ? 1 : 2;
-			const underlineChar = '_'; // Use underscore for the underline
+			const underlineChar = '_';
 			return `${"#".repeat(level)} ${content}\n${underlineChar.repeat(content.length)}\n`;
 		}
 	});

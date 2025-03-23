@@ -29,20 +29,6 @@ class SampleModal extends Modal {
 			await this.handleSubmit();
 			this.close();
 		};
-
-		const evtListener = async (e: KeyboardEvent) => {
-			if (e.key === 'Enter' || e.key === 'Tab') {
-				await this.handleSubmit();
-				this.close();
-				rm();
-			}
-		};
-
-		function rm() {
-			removeEventListener("keydown", evtListener);
-		}
-
-		addEventListener("keydown", evtListener)
 	}
 
 	onClose() {
@@ -51,7 +37,8 @@ class SampleModal extends Modal {
 	}
 
 	async handleSubmit() {
-		await new WikipediaNote(this.settings).create(this.input.value);
+		if(this.input.value != "") await new WikipediaNote(this.settings).create(this.input.value);
+
 	}
 }
 

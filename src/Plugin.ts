@@ -1,6 +1,7 @@
 import { Plugin} from 'obsidian';
 import {DEFAULT_SETTINGS, WikiPluginSettings, WikiSettingsTab} from "./PluginSettings";
 import SampleModal from "./Modal";
+import SampleMultiModal from "./ModalMultiple";
 
 class WikiPlugin extends Plugin {
 	settings: WikiPluginSettings;
@@ -19,9 +20,16 @@ class WikiPlugin extends Plugin {
 	init() {
 		this.addCommand({
 			id: 'open-import-modal',
-			name: 'Open the Importer',
+			name: 'Import Wikipedia article',
 			callback: () => {
 				new SampleModal(this.app, this.settings).open();
+			}
+		});
+		this.addCommand({
+			id: 'open-import-modal-multi',
+			name: 'Import multiple articles',
+			callback: () => {
+				new SampleMultiModal(this.app, this.settings).open();
 			}
 		});
 	}

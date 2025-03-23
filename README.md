@@ -12,7 +12,7 @@
 ## Usage
 
 ```sh
-CTRL+P in Obsidian then "Wiki 2 Obsidian: Open the Importer";
+CTRL+P in Obsidian then "Wiki 2 Obsidian: Import Wikipedia article"
 ```
 
 ## Author
