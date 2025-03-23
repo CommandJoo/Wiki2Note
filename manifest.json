@@ -1,11 +1,11 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "wiki-2-obsidian",
+	"name": "Wiki 2 Obsidian",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
+	"description": "Gives the user the ability to generate an Obsidian note from a Wikipedia article.",
+	"author": "Johannes Hans",
+	"authorUrl": "https://github.com/CommandJoo",
 	"fundingUrl": "https://obsidian.md/pricing",
 	"isDesktopOnly": false
 }
