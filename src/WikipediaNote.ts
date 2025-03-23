@@ -12,14 +12,14 @@ class WikipediaNote {
 	}
 
 	async create(article: string) {
-		const title = `${article.replace(/[^a-zA-Z0-9]/g, "_")}`;
+		const title = `${article.replace(/[^\p{L}\p{N}]/gu, "_")}`;
 		const content = `---\n
 tags:
 - wikipedia-note
 ---\n
-# ${title}\n
+# ${article}\n
 ___\n
-${await fetchWikipediaMarkdown(title, this.settings)}
+${await fetchWikipediaMarkdown(article, this.settings)}
 `
 		await createAndOpenNote(title, content)
 	}
