@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Wiki2Obsidian 👋</h1>
+<h1 align="center">Welcome to Wiki2Note 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
@@ -12,7 +12,7 @@
 ## Usage
 
 ```sh
-CTRL+P in Obsidian then "Wiki 2 Obsidian: Import Wikipedia article"
+CTRL+P in Obsidian then "Wiki 2 Note: Import Wikipedia article"
 ```
 
 ## Author
