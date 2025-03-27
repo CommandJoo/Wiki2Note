@@ -138,11 +138,10 @@ async function fetchWikipediaMarkdown(title: string, settings: WikiPluginSetting
 		filter: "span",
 		replacement: (content, node) => {
 			if (node) {
-				if ((node as HTMLElement)?.getAttribute("class") == ("figure")) {
-					const el = node as HTMLElement;
-					return `${el.outerHTML}`;
+				if ((node as HTMLElement)?.classList.contains("figure")) {
+					const serializer = new XMLSerializer();
+					return serializer.serializeToString(node);
 				} else {
-					return content;
 				}
 			}
 			return "";
