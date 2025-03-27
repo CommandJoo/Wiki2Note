@@ -6,3 +6,9 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+.wiki-modal {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+    gap: 10px;
+}

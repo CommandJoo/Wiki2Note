@@ -2,7 +2,7 @@ import {App, Modal} from "obsidian";
 import {WikiPluginSettings} from "./PluginSettings";
 import WikipediaNote from "./WikipediaNote";
 
-class SampleModal extends Modal {
+class WikiModal extends Modal {
 	private settings: WikiPluginSettings;
 
 	constructor(app: App, settings: WikiPluginSettings) {
@@ -14,10 +14,7 @@ class SampleModal extends Modal {
 
 	async onOpen() {
 		const {contentEl} = this;
-		contentEl.style.padding = '20px';
-		contentEl.style.display = 'flex';
-		contentEl.style.flexDirection = 'column'; // Stack elements vertically
-		contentEl.style.gap = '10px'; // Add space between elements
+		contentEl.classList.add("wiki-modal");
 
 		const label = contentEl.createEl('label', { text: 'Name of the Wikipedia Entry:' });
 		label.setAttr('for', 'text-input');
@@ -43,4 +40,4 @@ class SampleModal extends Modal {
 }
 
 
-export default SampleModal;
+export default WikiModal;

@@ -3,7 +3,7 @@ import {WikiPluginSettings} from "./PluginSettings";
 import WikipediaNote from "./WikipediaNote";
 
 
-class SampleMultiModal extends Modal {
+class WikiMultiModal extends Modal {
 	private settings: WikiPluginSettings;
 
 	constructor(app: App, settings: WikiPluginSettings) {
@@ -29,10 +29,7 @@ class SampleMultiModal extends Modal {
 
 	async onOpen() {
 		const {contentEl} = this;
-		contentEl.style.padding = '20px';
-		contentEl.style.display = 'flex';
-		contentEl.style.flexDirection = 'column'; // Stack elements vertically
-		contentEl.style.gap = '10px'; // Add space between elements
+		contentEl.classList.add("wiki-modal");
 
 		contentEl.createEl('label', { text: 'Name of the Wikipedia Entries:' });
 		contentEl.createEl('label', {text: 'Click text field to add more...'});
@@ -65,4 +62,4 @@ class SampleMultiModal extends Modal {
 }
 
 
-export default SampleMultiModal;
+export default WikiMultiModal;
