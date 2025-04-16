@@ -2,7 +2,7 @@ import {WikiPluginSettings} from "./PluginSettings";
 import axios from "axios";
 import * as cheerio from "cheerio";
 import TurndownService from "turndown";
-import {Notice} from "obsidian";
+import {Notice, requestUrl} from "obsidian";
 
 class WikipediaNote {
 	private settings: WikiPluginSettings;
@@ -35,8 +35,8 @@ async function createAndOpenNote(fileName: string, content: string) {
 async function cleanWikiHtml(title: string, countryPrefix: string) {
 	const url = `https://${countryPrefix}.wikipedia.org/api/rest_v1/page/html/${encodeURIComponent(title)}`;
 	try {
-		const response = await axios.get(url, {headers: {"User-Agent": "WikiToMarkdownBot/1.0"}});
-		const $ = cheerio.load(response.data);
+		const response = await requestUrl({url, headers: {"User-Agent": "WikiToMarkdownBot/1.0"}});
+		const $ = cheerio.load(response.text);
 		$("style").remove();
 		const $e = $("*");
 		$e.removeAttr("rel");

@@ -3,7 +3,7 @@
 	"name": "Wiki 2 Note",
 	"version": "1.0.4",
 	"minAppVersion": "0.15.0",
-	"description": "Gives the user the ability to generate a Note from a Wikipedia article.",
+	"description": "Generate a Note from a Wikipedia article.",
 	"author": "Johannes Hans",
 	"authorUrl": "https://github.com/CommandJoo",
 	"fundingUrl": "",

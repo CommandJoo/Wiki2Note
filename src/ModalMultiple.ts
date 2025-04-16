@@ -31,7 +31,7 @@ class WikiMultiModal extends Modal {
 		const {contentEl} = this;
 		contentEl.classList.add("wiki-modal");
 
-		contentEl.createEl('label', { text: 'Name of the Wikipedia Entries:' });
+		contentEl.createEl('label', { text: 'Name of the Wikipedia entries:' });
 		contentEl.createEl('label', {text: 'Click text field to add more...'});
 		this.input = [];
 		const firstInput = contentEl.createEl("input", {type: "text"});

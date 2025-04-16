@@ -29,7 +29,7 @@ class WikiSettingsTab extends PluginSettingTab {
 
 		new Setting(containerEl)
 			.setName('Country prefix')
-			.setDesc("The prefix you want for the Language you use.Example: *en*.wikipedia.org")
+			.setDesc("The prefix you want for the language you use. Example: *en*.wikipedia.org")
 			.addDropdown((dropdown) => {
 
 				for(let i = 0; i < LANGUAGE_CODES.length; i++) {
@@ -44,8 +44,8 @@ class WikiSettingsTab extends PluginSettingTab {
 				});
 			});
 		new Setting(containerEl)
-			.setName('Table Background')
-			.setDesc("The Background color of Tables or Images")
+			.setName('Table background')
+			.setDesc("The background color of tables or images")
 			.addColorPicker((color) => {
 
 				color.setValue(this.plugin.settings.tableBackground);
@@ -55,8 +55,8 @@ class WikiSettingsTab extends PluginSettingTab {
 				});
 			});
 		new Setting(containerEl)
-			.setName('Table Border')
-			.setDesc("The Border color of Tables or Images")
+			.setName('Table border')
+			.setDesc("The border color of tables or images")
 			.addColorPicker((color) => {
 
 				color.setValue(this.plugin.settings.tableBorder);
