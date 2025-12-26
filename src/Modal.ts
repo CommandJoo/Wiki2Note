@@ -12,11 +12,11 @@ class WikiModal extends Modal {
 
 	private input: HTMLInputElement;
 
-	async onOpen() {
+	onOpen() {
 		const {contentEl} = this;
 		contentEl.classList.add("wiki-modal");
 
-		const label = contentEl.createEl('label', { text: 'Name of the Wikipedia Entry:' });
+		const label = contentEl.createEl('label', { text: 'Name of the wikipedia entry:' });
 		label.setAttr('for', 'text-input');
 		this.input = contentEl.createEl("input", {type: "text"});
 		this.input.id = 'text-input';

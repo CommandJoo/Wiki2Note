@@ -1,7 +1,7 @@
 {
 	"id": "wiki-2-note",
 	"name": "Wiki 2 Note",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"minAppVersion": "0.15.0",
 	"description": "Generate a Note from a Wikipedia article.",
 	"author": "Johannes Hans",

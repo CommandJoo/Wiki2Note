@@ -19,7 +19,7 @@ class WikiPlugin extends Plugin {
 	init() {
 		this.addCommand({
 			id: 'open-import-modal',
-			name: 'Import Wikipedia article',
+			name: 'Import wikipedia article',
 			callback: () => {
 				new WikiModal(this.app, this.settings).open();
 			}

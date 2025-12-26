@@ -21,17 +21,17 @@ class WikiMultiModal extends Modal {
 
 		if(this.input.length >= 2) this.input[this.input.length-2].focus();
 
-		this.input[this.input.length - 1].onclick = async () => {
+		this.input[this.input.length - 1].onclick = () => {
 			this.createInput(contentEl,submitButton)
 		};
 		this.input[this.input.length - 2].onclick = null;
 	}
 
-	async onOpen() {
+	onOpen() {
 		const {contentEl} = this;
 		contentEl.classList.add("wiki-modal");
 
-		contentEl.createEl('label', { text: 'Name of the Wikipedia entries:' });
+		contentEl.createEl('label', { text: 'Name of the wikipedia entries:' });
 		contentEl.createEl('label', {text: 'Click text field to add more...'});
 		this.input = [];
 		const firstInput = contentEl.createEl("input", {type: "text"});
@@ -43,7 +43,7 @@ class WikiMultiModal extends Modal {
 			this.close();
 		};
 
-		this.input[this.input.length - 1].onclick = async () => {
+		this.input[this.input.length - 1].onclick = () => {
 			this.createInput(contentEl,submitButton);
 		};
 	}

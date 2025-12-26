@@ -1,5 +1,4 @@
 import {WikiPluginSettings} from "./PluginSettings";
-import axios from "axios";
 import * as cheerio from "cheerio";
 import TurndownService from "turndown";
 import {Notice, requestUrl} from "obsidian";
@@ -44,7 +43,7 @@ async function cleanWikiHtml(title: string, countryPrefix: string) {
 		$e.removeAttr("about");
 		return $;
 	} catch (error) {
-		new Notice("Unable to fetch data from Wikipedia.");
+		new Notice("Unable to fetch data from wikipedia.");
 		console.error(error);
 		return null;
 	}
@@ -76,7 +75,7 @@ async function fetchWikipediaMarkdown(title: string, settings: WikiPluginSetting
 
 		const html = `
 <span class="figure" style="display: inline-block; float: right; max-width: 200px; border: 2px solid ${settings.tableBorder}; background-color: ${settings.tableBackground}; padding: 5px; margin: 10px; clear: both">
-	<img class="figureimg" src="${imgLink}">
+	<img alt="image" class="figureimg" src="${imgLink}">
 	<p>${caption}</p>
 </span>
 			`
@@ -138,10 +137,9 @@ async function fetchWikipediaMarkdown(title: string, settings: WikiPluginSetting
 		filter: "span",
 		replacement: (content, node) => {
 			if (node) {
-				if ((node as HTMLElement)?.classList.contains("figure")) {
+				if ("classList" in node && node?.classList.contains("figure")) {
 					const serializer = new XMLSerializer();
 					return serializer.serializeToString(node);
-				} else {
 				}
 			}
 			return "";
