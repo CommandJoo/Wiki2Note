@@ -1,6 +1,6 @@
 {
 	"id": "wiki-to-note",
-	"name": "Wiki 2 Note",
+	"name": "Wiki To Note",
 	"version": "1.0.1",
 	"minAppVersion": "0.15.0",
 	"description": "Generate a Note from a Wikipedia article.",
